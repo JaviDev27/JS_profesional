@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //scope global
+      var mensaje = "es un mensaje";
+
+      //scope funtions
+      function printNume() {
+        var index;
+        for (index = 0; index < 10; index++) {
+          function eventuallyPrintNumber(n) {
+            setTimeout(() => {
+              console.log(n);
+            }, 100);
+          }
+
+          eventuallyPrintNumber(index);
+        }
+      }
+
+      //printNume();
+
+      //block scope
+
+      function printNume2() {
+        for (let index = 0; index < 10; index++) {
+          setTimeout(() => {
+            console.log(index);
+          }, 100);
+        }
+      }
+
+      //printNume2();
+
+      //module scope
+      /* Hace que la vida de una variable 
+      este limitado al archivo que este definido*/
+    </script>
+  </body>
+</html>
