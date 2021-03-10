@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Hero(name) {
+        //THIS = Object.create(Hero.prototype);
+        this.name = name;
+
+        //return this;
+      }
+
+      Hero.prototype.saludar = function () {
+        console.log(`hola me llamo ${this.name} y soy NEW super heroe x2`);
+      };
+
+      const zelda1 = new Hero("zelda1");
+      //propiedades de la instancia
+      console.log("name: ", zelda1.name);
+      //propiedades de la clase
+      console.log("saludar :", zelda1.saludar);
+      console.log("toString :", zelda1.toString);
+
+      //hasOwnProperty (de donde salo toString o esto?)
+      console.log("toString :", zelda1.hasOwnProperty("name"));
+    </script>
+  </body>
+</html>

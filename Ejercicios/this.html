@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //this en el global scope
+      console.log("en el scope " + this);
+
+      //this en el scope de una función
+      /* en este caso  es el mismo windows ya que no esta dentro
+      de ninguna clase*/
+      function whoIsThis() {
+        return this;
+      }
+
+      console.log("quien es this: " + whoIsThis());
+
+      //this en strict mode
+      /* el strict puede estar en una funcion
+      en este caso esta en la función indicando
+      que solo afecta aesa función */
+
+      function whoIsThisStrict() {
+        "use strict";
+        return this;
+      }
+
+      console.log("quien es this strict: " + whoIsThisStrict());
+
+      //this en el contexto de un objeto
+
+      const person = {
+        name: "gabriel",
+        saludar: function () {
+          console.log(`hola soy ${this.name}`);
+        },
+      };
+
+      person.saludar();
+
+      //this cuando sacamos una función de un objeto
+      /* en este caso no se llama dentro del contexto de un objeto
+      solo se llama como un afunción normal */
+      const accion = person.saludar;
+      accion();
+
+      //this en el contexto de una clase
+      /* this hace referencia a la instancia no al objeto */
+
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype.saludar = function () {
+        console.log(`hola me llamo ${this.name}`);
+      };
+
+      const angela = new Person("Angela");
+      angela.saludar();
+    </script>
+  </body>
+</html>
