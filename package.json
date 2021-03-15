@@ -1,0 +1,27 @@
+{
+  "name": "14_js_profesional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html Ejercicios/*.html Ejercicios/**/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaviDev27/JS_profesional.git"
+  },
+  "author": "Javier Manobanda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaviDev27/JS_profesional/issues"
+  },
+  "homepage": "https://github.com/JaviDev27/JS_profesional#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^4.2.3"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
